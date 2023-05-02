@@ -45,9 +45,9 @@ const Header = () => {
 
                 </li>
             </ul>   
-            <Link to={"/login"} >
-            <button className='hidden md:block text-white bg-gradient-to-r from-indigo-300 to-indigo-300 
-                rounded-md hover:bg-gradient-to-r hover:from-orange-300 hover:to-orange-300  font-bold md:text-lg py-2 px-4 rounded-md '> 
+            <Link  >
+            <button className='hidden md:block text-white bg-gradient-to-r from-indigo-500 to-indigo-500 
+                rounded-md hover:bg-gradient-to-r hover:from-orange-400 hover:to-orange-400  font-bold md:text-lg py-2 px-4 rounded-md '> 
                 
                  login
                 <FaSignInAlt className='inline ml-1 font-bold'/>
@@ -55,13 +55,16 @@ const Header = () => {
                 </button>
             </Link>
            
-               
+                         
                 <div className="flex md:hidden ">
-        <button className='  bg-gradient-to-r from-indigo-600 to-indigo-600 rounded-md hover:bg-gradient-to-r hover:from-orange-500 hover:to-orange-600   ml-auto relative md:w-100 w-20 bottom-12 font-medium text-sm md:md:text-lg  text-white   p-1 '>login
+                <Link to={"/login"}>   
+        <button className='  bg-gradient-to-r from-indigo-500 to-indigo-500 rounded-md hover:bg-gradient-to-r hover:from-orange-400 hover:to-orange-400   ml-auto relative md:w-100 w-20 bottom-12 font-medium text-sm md:md:text-lg  text-white   p-1 '>login
         <FaSignInAlt className='inline ml-1 font-bold'/>
         
         </button>
 
+
+        </Link>
         </div>
         </nav>
         </>
