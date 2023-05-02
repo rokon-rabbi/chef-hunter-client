@@ -46,8 +46,8 @@ const Header = () => {
                 </li>
             </ul>   
             <Link to={"/login"} >
-            <button className='hidden md:block text-white bg-gradient-to-r from-indigo-500 to-indigo-500 
-                rounded-md hover:bg-gradient-to-r hover:from-orange-400 hover:to-orange-400  font-bold md:text-lg py-2 px-4 rounded-md '> 
+            <button className='hidden md:block text-white bg-gradient-to-r from-indigo-300 to-indigo-300 
+                rounded-md hover:bg-gradient-to-r hover:from-orange-300 hover:to-orange-300  font-bold md:text-lg py-2 px-4 rounded-md '> 
                 
                  login
                 <FaSignInAlt className='inline ml-1 font-bold'/>
