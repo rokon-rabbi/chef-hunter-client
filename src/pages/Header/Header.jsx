@@ -44,8 +44,19 @@ const Header = () => {
             </NavLink>
 
                 </li>
+                <li>
+                <NavLink
+              to='/about'
+              aria-label='Blog'
+              title='Blog'
+              className={({ isActive }) => (isActive ? 'active' : 'default')}
+            >
+              About us
+            </NavLink>
+
+                </li>
             </ul>   
-            <Link  >
+            <Link to={"/login"}  >
             <button className='hidden md:block text-white bg-gradient-to-r from-indigo-500 to-indigo-500 
                 rounded-md hover:bg-gradient-to-r hover:from-orange-400 hover:to-orange-400  font-bold md:text-lg py-2 px-4 rounded-md '> 
                 

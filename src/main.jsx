@@ -8,6 +8,7 @@ import Home from './pages/Home/Home.jsx';
 import Blog from './pages/blog/Blog.jsx';
 import Loginpage from './pages/Loginpage/Loginpage.jsx';
 import Registerpage from './pages/Registerpage/Registerpage.jsx';
+import About from './pages/about/About.jsx';
 const router= createBrowserRouter([
   {
     path:"/",
@@ -18,7 +19,8 @@ const router= createBrowserRouter([
      },
       { path: '/blog', element: <Blog/> },
       { path: '/login', element: <Loginpage/> },
-      { path: '//register', element: <Registerpage/> }
+      { path: '/register', element: <Registerpage/> },
+      { path: '/about', element: <About/> }
     ],
   }
   ]);
