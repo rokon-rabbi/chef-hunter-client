@@ -14,9 +14,9 @@ const Footer = () => {
         <p className=' text-gray-300 font-thin text-sm w-72'>Register and get notified about all the news & updates before it gets too late.</p>
         <div className="d-flex ">
 
-        <input className=" shadow appearance-none bg-black  rounded  py-4 px-5 text-gray-700 leading-tight focus:outline-orange-500 focus:shadow-outline" id="email" type="email" placeholder="Your email address"/>
+        <input className=" shadow appearance-none bg-black  rounded  md:py-4 md:px-5 py-2 px-3 text-gray-700 leading-tight focus:outline-orange-500 focus:shadow-outline" id="email" type="email" placeholder="Your email address"/>
 
-                <button className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-4 px-5 ml-1 rounded focus:outline-none focus:shadow-outline " type="button">
+                <button className="bg-orange-500 hover:bg-orange-700 text-white font-bold md:py-4 py-2 px-3 md:px-5 ml-1 rounded focus:outline-none focus:shadow-outline " type="button">
                 Sign Up
             </button>
       </div>

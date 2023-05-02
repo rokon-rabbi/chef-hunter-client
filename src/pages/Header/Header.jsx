@@ -5,6 +5,9 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import Logo from '../../../src/assets/Logo.png'
 
+// import { FiLogIn } from 'react-icons/fa';
+import { FaSignInAlt } from "react-icons/fa";
+
 const Header = () => {
     const [icon,setIcon]=useState(true)
     return (
@@ -15,7 +18,7 @@ const Header = () => {
            
            <Link
           to={"/"}
-          aria-label='Jobfinder'
+          aria-label='FoodHub'
           title='FoodHub' className="flex justify-center">
                 <img className='w-16 md:w-24 lg:w-32' src={Logo} alt="FoodHub logo" />
             </Link>
@@ -42,10 +45,22 @@ const Header = () => {
 
                 </li>
             </ul>   
+            <Link to={"/login"} >
+            <button className='hidden md:block text-white bg-gradient-to-r from-indigo-500 to-indigo-500 
+                rounded-md hover:bg-gradient-to-r hover:from-orange-400 hover:to-orange-400  font-bold md:text-lg py-2 px-4 rounded-md '> 
+                
+                 login
+                <FaSignInAlt className='inline ml-1 font-bold'/>
+               
+                </button>
+            </Link>
            
-                <button className='hidden md:block bg-gradient-to-r from-indigo-400 to-purple-600 text-white py-4 px-6 rounded-md hover:bg-gradient-to-r hover:from-indigo-500 hover:to-purple-700'>Star Applying</button>
-                <div className="flex md:hidden bg-slate-100  ">
-        <button className=' ml-auto relative md:w-100 w-20 bottom-9  bg-gradient-to-r from-indigo-400 to-purple-600 text-sm md:text-md  text-white  p-1 rounded-md hover:bg-gradient-to-r hover:from-indigo-500 hover:to-purple-700'>Star Applying</button>
+               
+                <div className="flex md:hidden ">
+        <button className='  bg-gradient-to-r from-indigo-600 to-indigo-600 rounded-md hover:bg-gradient-to-r hover:from-orange-500 hover:to-orange-600   ml-auto relative md:w-100 w-20 bottom-12 font-medium text-sm md:md:text-lg  text-white   p-1 '>login
+        <FaSignInAlt className='inline ml-1 font-bold'/>
+        
+        </button>
 
         </div>
         </nav>
