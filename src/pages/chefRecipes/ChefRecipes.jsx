@@ -25,7 +25,7 @@ const ChefRecipes = (props) => {
     
       return (
         <motion.div
-          className="bg-blue-500 p-8 flex justify-center items-center"
+          className=" bg-amber-500 p-8 rounded-md flex justify-center items-center"
           initial="hidden"
           animate="visible"
           variants={textVariants}
