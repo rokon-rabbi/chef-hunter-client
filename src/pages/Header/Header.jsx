@@ -67,9 +67,11 @@ const Header = () => {
             </Link>
            
                          
-                <div className="flex md:hidden ">
+                <div className="flex right-5 absolute md:hidden ">
                 <Link to={"/login"}>   
-        <button className='  bg-gradient-to-r from-indigo-500 to-indigo-500 rounded-md hover:bg-gradient-to-r hover:from-orange-400 hover:to-orange-400   ml-auto relative md:w-100 w-20 bottom-12 font-medium text-sm md:md:text-lg  text-white   p-1 '>login
+        <button className='  bg-gradient-to-r from-indigo-500 to-indigo-500 rounded-md hover:bg-gradient-to-r hover:from-orange-400 hover:to-orange-400   ml-auto relative md:w-100 w-20 bottom-12 font-medium text-sm md:md:text-lg  text-white   p-1 '>
+          
+          login
         <FaSignInAlt className='inline ml-1 font-bold'/>
         
         </button>
