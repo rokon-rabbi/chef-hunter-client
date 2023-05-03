@@ -7,6 +7,7 @@ import Registerpage from "../../pages/Registerpage/Registerpage";
 import About from "../../pages/about/About";
 import Home from "../../pages/Home/Home";
 import App from "../../App";
+import ChefDetails from "../../pages/chefDetails/ChefDetails";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,11 @@ const router = createBrowserRouter([
       { path: "/login", element: <Loginpage /> },
       { path: "/register", element: <Registerpage /> },
       { path: "/about", element: <About /> },
+      { 
+        path: "/chef/:id", 
+        element: <ChefDetails/>,
+        loader: ({params}) => fetch(`https://b710-chef-recipe-hunter-main-rokon-rabbi.vercel.app/chefs/${params.id}`)
+      },
     ],
   },
 ]);

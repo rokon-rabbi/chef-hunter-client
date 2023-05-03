@@ -3,7 +3,7 @@ import { SlLike } from "react-icons/sl";
 import { Link } from 'react-router-dom';
 
 const ChefCard = (props) => {
-  const{image,chefName,yearsOfExperience,likes,numRecipes  }=props.cardData;
+  const{image,chefName,yearsOfExperience,likes,numRecipes ,id }=props.cardData;
     return (
         <div>
              <div className=" h-75  rounded overflow-hidden shadow-xl border">
@@ -18,7 +18,7 @@ const ChefCard = (props) => {
         <span className="">{likes}</span>
         <SlLike className='mb-3 pt-1 text-blue-500 inline font-bold text-3xl' ></SlLike>
         </button>
-        <Link to={} >
+        <Link to={`/chef/${id}`} >
         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
           View Recipes
         </button>
