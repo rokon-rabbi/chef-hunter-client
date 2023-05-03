@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
 const Registerpage = () => {
-    return (
-        <div className="bg-cyan-500 flex flex-col items-center justify-center   h-screen">
+  return (
+    <div className="bg-cyan-500 flex flex-col items-center justify-center   h-screen">
       <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 md:w-96 mb-4">
-        <p className='text-3xl font-bold text-center underline m-4' >Register</p>
+        <p className="text-3xl font-bold text-center underline m-4">Register</p>
         <div className="mb-4">
           <label className="block text-gray-700 font-bold mb-2" htmlFor="name">
             Name
@@ -28,7 +28,10 @@ const Registerpage = () => {
           />
         </div>
         <div className="mb-6">
-          <label className="block text-gray-700 font-bold mb-2" htmlFor="password">
+          <label
+            className="block text-gray-700 font-bold mb-2"
+            htmlFor="password"
+          >
             Password
           </label>
           <input
@@ -59,7 +62,7 @@ const Registerpage = () => {
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default Registerpage;

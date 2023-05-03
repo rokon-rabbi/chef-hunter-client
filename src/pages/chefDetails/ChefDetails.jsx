@@ -3,26 +3,26 @@ import { useLoaderData, useParams } from "react-router-dom";
 import ChefRecipes from "../chefRecipes/ChefRecipes";
 import { CiCircleChevRight } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
- import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const ChefDetails = () => {
   const chefInfo = useLoaderData();
-  console.log(chefInfo)
-//   const [button, setButton ] = useState(false);
+  console.log(chefInfo);
+  //   const [button, setButton ] = useState(false);
   const [disabledButtons, setDisabledButtons] = useState([]);
 
-  const handleFavorite = (id) => {
-     toast.success("The recipe is your favorite!", {
-    position: "top-right",
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-  });
+  const handleFavorite = id => {
+    toast.success("The recipe is your favorite!", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
     setDisabledButtons([...disabledButtons, id]);
-    console.log(id)
+    console.log(id);
   };
   return (
     <div>
@@ -65,12 +65,14 @@ const ChefDetails = () => {
                 <td className="py-3 border px-4">{recipe.method}</td>
                 <td className="py-3 border px-4">{recipe.rating}</td>
                 <td className="py-3 border px-4">
-                  <button 
+                  <button
                     onClick={() => handleFavorite(recipe.id)}
                     className={`flex rounded border p-2  hover:bg-red-500 hover:text-white  items-center text-red-600 focus:outline-none  ${
-                        disabledButtons.includes(recipe.id) ? 'disabled:opacity-25 cursor-not-allowed' : ''
-                      }`} disabled={disabledButtons.includes(recipe.id)}
-                    
+                      disabledButtons.includes(recipe.id)
+                        ? "disabled:opacity-25 cursor-not-allowed"
+                        : ""
+                    }`}
+                    disabled={disabledButtons.includes(recipe.id)}
                   >
                     <FaHeart className="w-5 h-5 mr-1" />
                     <span>Favorite</span>

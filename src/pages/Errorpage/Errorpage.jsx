@@ -1,12 +1,12 @@
-import React from 'react';
-import {Link, useRouteError } from 'react-router-dom';
+import React from "react";
+import { Link, useRouteError } from "react-router-dom";
 
 const ErrorPage = () => {
-      const { error, status } = useRouteError()
-    return (
-        <div>
-             <section className='flex items-center h-screen p-16 bg-gray-100 text-gray-900'>
-        <div className='container flex flex-col items-center justify-center px-5 mx-auto my-8'>
+  const { error, status } = useRouteError();
+  return (
+    <div>
+      <section className="flex items-center h-screen p-16 bg-gray-100 text-gray-900">
+        <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8">
           {/* <svg
             xmlns='http://www.w3.org/2000/svg'
             viewBox='0 0 512 512'
@@ -32,26 +32,30 @@ const ErrorPage = () => {
               points='383.958 182.63 360.042 161.37 338.671 185.412 314.63 164.042 293.37 187.958 317.412 209.329 296.042 233.37 319.958 254.63 341.329 230.588 365.37 251.958 386.63 228.042 362.588 206.671 383.958 182.63'
             ></polygon>
           </svg> */}
-        <img className='relative mb-20 mix-blend-multiply' src="https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif" alt="" />
+          <img
+            className="relative mb-20 mix-blend-multiply"
+            src="https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif"
+            alt=""
+          />
 
-          <div className='max-w-md text-center absolute bottom-16 '>
-            <h2 className='mb-8 font-extrabold text-6xl text-gray-600'>
-              <span className='sr-only mb'>Error</span> {status || 404}
+          <div className="max-w-md text-center absolute bottom-16 ">
+            <h2 className="mb-8 font-extrabold text-6xl text-gray-600">
+              <span className="sr-only mb">Error</span> {status || 404}
             </h2>
-            <p className='text-sm font-semibold md:text-xl mb-16'>
+            <p className="text-sm font-semibold md:text-xl mb-16">
               {error?.message}
             </p>
             <Link
-              to='/'
-              className='px-8 py-3 font-semibold rounded bg-cyan-200 text-gray-900'
+              to="/"
+              className="px-8 py-3 font-semibold rounded bg-cyan-200 text-gray-900"
             >
               Back to homepage
             </Link>
           </div>
         </div>
-      </section> 
-        </div>
-    );
+      </section>
+    </div>
+  );
 };
 
 export default ErrorPage;

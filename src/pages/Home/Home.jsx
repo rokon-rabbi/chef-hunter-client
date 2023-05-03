@@ -3,6 +3,7 @@ import Slider from "../Slider/Slider";
 import { useState } from "react";
 import { useEffect } from "react";
 import ChefCard from "../chefCard/ChefCard";
+import Category from "./ExtraSection/Category";
 const Home = () => {
   const [chefData, setChefData] = useState([]);
   useEffect(() => {
@@ -21,14 +22,19 @@ const Home = () => {
     <div className="">
       {/* slider  */}
       <Slider></Slider>
-
-      <p className="md:text-6xl text-3xl font-extrabold text-gray-900 text-center mt-14 md:mt-32">
+      {/* extra home page category section  */}
+      <Category />
+      {/* chef section */}
+      <p className="md:text-6xl bg-zinc-50  text-3xl font-extrabold text-gray-900 text-center mt-14 md:mt-12">
         Chefs
       </p>
-      <div className="md:p-36 p-14 grid  md:grid-cols-3 grid-cols-1 gap-10">
-        {chefData.map(cardData => ( <ChefCard cardData={cardData} key={cardData.id}></ChefCard>)
-        )}
+      <div className= " bg-zinc-50  md:p-36 p-14 grid  md:grid-cols-3 grid-cols-1 gap-10">
+        {chefData.map(cardData => (
+          <ChefCard cardData={cardData} key={cardData.id}></ChefCard>
+        ))}
       </div>
+      {/* letest recipe extra section  */}
+      
     </div>
   );
 };
