@@ -2,7 +2,7 @@ import React from "react";
 
 const LatestRecipe = () => {
   return (
-    <div className="bg-neutral-50 relative">
+    <div className="bg-neutral-50  relative">
       <div
         className="absolute inset-0  bg-cover bg-center"
         style={{

@@ -16,9 +16,7 @@ const Category = () => {
                 className="w-full  h-full object-cover"
               />
              
-             <div className="absolute inset-0 bg-black opacity-0 hover:opacity-50 transition-opacity duration-300">
-                
-              </div>
+               
               
             </div>
             <h3 className='text-3xl p-2 text-zinc-900 font-bold'>Beef</h3>
@@ -33,9 +31,7 @@ const Category = () => {
                 className="w-full hover:cursor-pointer h-full object-cover"
               />
              
-             <div className="absolute inset-0 bg-black opacity-0 hover:opacity-50 transition-opacity duration-300">
-                
-              </div>
+               
               
             </div>
             <h3 className='text-3xl p-2 text-zinc-900 font-bold'>Chicken</h3>
@@ -50,9 +46,7 @@ const Category = () => {
                 className="w-full hover:cursor-pointer h-full object-cover"
               />
              
-             <div className="absolute inset-0 bg-black opacity-0 hover:opacity-50 transition-opacity duration-300">
-                
-              </div>
+             
               
             </div>
             <h3 className='text-3xl p-2 text-zinc-900 font-bold'>Vegetarian</h3>
@@ -67,9 +61,7 @@ const Category = () => {
                 className="w-full hover:cursor-pointer h-full object-cover"
               />
              
-             <div className="absolute inset-0 bg-black opacity-0 hover:opacity-50 transition-opacity duration-300">
-                
-              </div>
+               
               
             </div>
             <h3 className='text-3xl p-2 text-zinc-900 font-bold'>Desserts</h3>
