@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { useContext } from "react";
-import { GoogleAuthProvider} from "firebase/auth";
+import { GoogleAuthProvider } from "firebase/auth";
 import app from "../../firebase/firebase.config";
 // import { GithubAuthProvider } from "firebase/auth";
 import { getAuth, signInWithPopup, GithubAuthProvider } from "firebase/auth";
@@ -14,6 +14,7 @@ const Loginpage = () => {
 
   const { signIn } = useContext(AuthContext);
   const [user, setUser] = useState({});
+  const [error, setError] = useState("");
   const googleProvider = new GoogleAuthProvider();
   const provider = new GithubAuthProvider();
   const auth = getAuth(app);
@@ -59,9 +60,10 @@ const Loginpage = () => {
     const email = form.email.value;
     const password = form.password.value;
     // console.log(email, password);
-
+    setError("Invalid Email and password");
     signIn(email, password)
       .then(result => {
+        setError("");
         const loggedUser = result.user;
         // console.log(loggedUser);
         navigate(from, { replace: true });
@@ -71,8 +73,8 @@ const Loginpage = () => {
       });
   };
   return (
-    <div className=" bg-cyan-500">
-      <div className="flex flex-col items-center justify-center h-screen ">
+    <div className=" bg-cyan-500 ">
+      <div className="flex flex-col  items-center justify-center h-screen ">
         <div className="bg-white shadow-md rounded px-8 mb-24 pt-8">
           <div className="mb-4">
             <p className="text-3xl font-bold text-center underline pb-8">
@@ -101,6 +103,7 @@ const Loginpage = () => {
                   placeholder="Enter your password"
                 />
               </div>
+              <p className="text-xs text-red-500">{error}</p>
               <div className="mb-4">
                 <button
                   className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
