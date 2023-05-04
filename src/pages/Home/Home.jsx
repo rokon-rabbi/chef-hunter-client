@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import ChefCard from "../chefCard/ChefCard";
 import Category from "./ExtraSection/Category";
+import LatestRecipe from "./ExtraSection/LatestRecipe";
 const Home = () => {
   const [chefData, setChefData] = useState([]);
   useEffect(() => {
@@ -28,13 +29,16 @@ const Home = () => {
       <p className="md:text-6xl bg-zinc-50  text-3xl font-extrabold text-gray-900 text-center mt-14 md:mt-12">
         Chefs
       </p>
-      <div className= " bg-zinc-50  md:p-36 p-14 grid  md:grid-cols-3 grid-cols-1 gap-10">
+      <div className=" bg-zinc-50  md:p-36 p-14 grid  md:grid-cols-3 grid-cols-1 gap-10">
         {chefData.map(cardData => (
           <ChefCard cardData={cardData} key={cardData.id}></ChefCard>
         ))}
       </div>
       {/* letest recipe extra section  */}
-      
+      <p className="md:text-6xl pb-14  text-3xl font-extrabold text-gray-900 text-center mt-14 md:mt-12">
+        Latest Recipes
+      </p>
+      <LatestRecipe />
     </div>
   );
 };

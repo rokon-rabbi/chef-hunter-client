@@ -1,18 +1,17 @@
 import React from "react";
-import Logo from "../../../assets/Logo.png";
-import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <>
       <div className=" bg-zinc-950 md:h-100 relative h-full  ">
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0  bg-cover bg-center"
           style={{
             backgroundImage: `url("https://img.freepik.com/free-vector/collection-social-media-monochromatic-doodles_79603-1753.jpg?w=740&t=st=1683022134~exp=1683022734~hmac=646b8e8a753a62db05a0ebdd6cf4cb5d55f047b8e89f4fe1ab39aae9c2ed8faf")`,
             opacity: "0.04",
           }}
         ></div>
-        <div className="  relative md:h-96   md:px-20 grid md:grid-cols-12 px-14 py-5 md:py-14">
+        <div className="  relative md:h-96  md:px-20 grid md:grid-cols-12 px-14 py-5 md:py-14">
           <div className="col-span-4 grid md:justify-between ">
             <p className="text-white font-bold text-3xl">Subscribe</p>
             <p className=" text-gray-300 font-thin text-sm w-72">
