@@ -8,11 +8,18 @@ import Logo from "../../../src/assets/Logo.png";
 // import { FiLogIn } from 'react-icons/fa';
 import { FaSignInAlt } from "react-icons/fa";
 import { AuthContext } from "../../providers/AuthProvider";
+import { getAuth } from "firebase/auth";
 
 const Header = () => {
+
+  const auth = getAuth();
+  // const currentuser = auth.currentUser;
   const [icon, setIcon] = useState(true);
   const { user, logOut } = useContext(AuthContext);
-
+  if (user !== null) {
+    console.log(user)
+    };
+  
   const handleLogOut = () => {
     logOut()
       .then()
@@ -79,9 +86,8 @@ const Header = () => {
             </NavLink>
           </li>
         </ul>
-          {
-           console.log('my user',user) 
-          }
+          
+        {/* <p>{user.displayName}</p> */}
         {user ? (
           <button
             onClick={handleLogOut}

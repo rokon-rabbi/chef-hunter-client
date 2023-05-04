@@ -2,10 +2,13 @@ import React from "react";
 import { useState } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import { getAuth, updateProfile } from "firebase/auth";
 
 const Registerpage = () => {
+
+const auth = getAuth();
   const [error, setError] = useState("");
-  const { createUser } = useContext(AuthContext);
+  const { createUser,logout,user } = useContext(AuthContext);
   const handleRegister = event => {
     event.preventDefault();
     const form = event.target;
@@ -23,10 +26,19 @@ const Registerpage = () => {
       setError("password must be 6 characters or longer");
       return;
     }
+  
     createUser(email, password)
       .then(result => {
         const createdUser = result.user;
-        console.log(createdUser);
+        updateProfile(user, {
+          displayName: {name}, photoURL: {photo}
+        }).then(() => {
+          // Profile updated!
+          // ...
+        }).catch((error) => {
+          // An error occurred
+          // ...
+        });
       })
       .catch(error => {
         console.log(error);
@@ -79,6 +91,7 @@ const Registerpage = () => {
               Photo URL
             </label>
             <input
+            required
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="photo"
               type="text"

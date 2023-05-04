@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { useContext } from "react";
-
+import { GoogleAuthProvider} from "firebase/auth";
+import app from "../../firebase/firebase.config";
+// import { GithubAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup, GithubAuthProvider } from "firebase/auth";
 const Loginpage = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -10,6 +13,46 @@ const Loginpage = () => {
   const from = location.state?.from?.pathname || "/";
 
   const { signIn } = useContext(AuthContext);
+  const [user, setUser] = useState({});
+  const googleProvider = new GoogleAuthProvider();
+  const provider = new GithubAuthProvider();
+  const auth = getAuth(app);
+  const handleGthub = () => {
+    signInWithPopup(auth, provider)
+      .then(result => {
+        // This gives you a GitHub Access Token. You can use it to access the GitHub API.
+        const credential = GithubAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+
+        // The signed-in user info.
+        const user = result.user;
+        // IdP data available using getAdditionalUserInfo(result)
+        // ...
+      })
+      .catch(error => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // The AuthCredential type that was used.
+        const credential = GithubAuthProvider.credentialFromError(error);
+        // ...
+      });
+  };
+  const handleGoogle = () => {
+    signInWithPopup(auth, googleProvider)
+      .then(result => {
+        const user = result.user;
+        setUser(user);
+        console.log(user);
+      })
+      .catch(error => {
+        const errorMessage = error.message;
+        console.log(errorMessage);
+      });
+  };
+
   const handleLogin = event => {
     event.preventDefault();
     const form = event.target;
@@ -78,6 +121,7 @@ const Loginpage = () => {
 
           <div className="mb-6 flex items-center justify-between">
             <button
+              onClick={handleGoogle}
               type="button"
               className="text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2"
             >
@@ -99,6 +143,7 @@ const Loginpage = () => {
               Sign in with Google
             </button>
             <button
+              onClick={handleGthub}
               type="button"
               className="text-white bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 mr-2 mb-2"
             >
