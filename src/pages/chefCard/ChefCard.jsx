@@ -1,18 +1,30 @@
 import React from "react";
 import { SlLike } from "react-icons/sl";
-import { Link } from "react-router-dom";
 
+import { Link } from "react-router-dom";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+import { delay } from "framer-motion";
 const ChefCard = props => {
   const { image, chefName, yearsOfExperience, likes, numRecipes, id } =
     props.cardData;
+    
   return (
     <div>
       <div className=" h-75  rounded overflow-hidden shadow-xl border">
-        <img
+        {/* lazyload image  */}
+        
+        <LazyLoadImage
+        
+        loading="lazy"
           className=" rounded-3xl shadow-sm p-5  md:h-80 h-64 w-full"
           src={image}
           alt={chefName}
+          effect="blur"
+      
         />
+    
+       
         <div className="px-6 grid justify-center py-4">
           <div className="font-bold text-xl mb-2">{chefName}</div>
           <p className="text-gray-700 text-base mb-2">
