@@ -14,7 +14,7 @@ const ChefCard = props => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLoaded(true);
-    }, 3000);
+    }, 1000);
     return () => clearTimeout(timeout);
   }, []);
   return (

@@ -12,7 +12,7 @@ const Header = () => {
   const [icon, setIcon] = useState(true);
   return (
     <>
-      <nav className="md:flex  md:p-10 p-2 md:px-20 md:justify-between  z-20 items-center ">
+      <nav className="md:flex   p-2 md:px-20 md:justify-between  z-20 items-center ">
         {icon ? (
           <FontAwesomeIcon
             className="text-3xl  md:hidden inline  relative top-11 justify-start "
