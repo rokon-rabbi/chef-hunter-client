@@ -1,7 +1,32 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
+import { useContext } from "react";
 
 const Loginpage = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log("login page location", location);
+  const from = location.state?.from?.pathname || "/";
+
+  const { signIn } = useContext(AuthContext);
+  const handleLogin = event => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    // console.log(email, password);
+
+    signIn(email, password)
+      .then(result => {
+        const loggedUser = result.user;
+        // console.log(loggedUser);
+        navigate(from, { replace: true });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
   return (
     <div className=" bg-cyan-500">
       <div className="flex flex-col items-center justify-center h-screen ">
@@ -10,55 +35,54 @@ const Loginpage = () => {
             <p className="text-3xl font-bold text-center underline pb-8">
               Login
             </p>
-            <label
-              className="block text-gray-700 font-bold mb-2"
-              htmlFor="email"
-            >
-              Email
-            </label>
-            <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="email"
-              type="text"
-              placeholder="Enter email"
-            />
-          </div>
-          <div className="mb-6">
-            <label
-              className="block text-gray-700 font-bold mb-2"
-              htmlFor="password"
-            >
-              Password
-            </label>
-            <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-              id="password"
-              type="password"
-              placeholder="Enter password"
-            />
-          </div>
-          <div className="mb-6 flex items-center justify-between">
-            <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              type="button"
-            >
-              Log In
-            </button>
+            <form onSubmit={handleLogin}>
+              <div className="mb-4">
+                <label className="block text-gray-700 font-bold mb-2">
+                  Email
+                </label>
+                <input
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="email"
+                  type="email"
+                  placeholder="Enter your email"
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-gray-700 font-bold mb-2">
+                  Password
+                </label>
+                <input
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="password"
+                  type="password"
+                  placeholder="Enter your password"
+                />
+              </div>
+              <div className="mb-4">
+                <button
+                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                  type="submit"
+                >
+                  Login
+                </button>
+              </div>
+            </form>
             Don't Have an Account?
             <Link
               to="/register"
-              className="mr-7 underline inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
+              className="mx-8  underline inline-block align-baseline font-bold text-lg text-blue-500 hover:text-blue-800"
             >
               Register
             </Link>
           </div>
+
           <div className="mb-6 flex items-center justify-between">
             <button
               type="button"
-              class="text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2"
+              className="text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2"
             >
               <svg
-                class="w-4 h-4 mr-2 -ml-1"
+                className="w-4 h-4 mr-2 -ml-1"
                 aria-hidden="true"
                 focusable="false"
                 data-prefix="fab"
@@ -76,10 +100,10 @@ const Loginpage = () => {
             </button>
             <button
               type="button"
-              class="text-white bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 mr-2 mb-2"
+              className="text-white bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 mr-2 mb-2"
             >
               <svg
-                class="w-4 h-4 mr-2 -ml-1"
+                className="w-4 h-4 mr-2 -ml-1"
                 aria-hidden="true"
                 focusable="false"
                 data-prefix="fab"

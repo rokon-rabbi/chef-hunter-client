@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -7,9 +7,17 @@ import Logo from "../../../src/assets/Logo.png";
 
 // import { FiLogIn } from 'react-icons/fa';
 import { FaSignInAlt } from "react-icons/fa";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Header = () => {
   const [icon, setIcon] = useState(true);
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then()
+      .catch(error => console.log(error));
+  };
   return (
     <>
       <nav className="md:flex   p-2 md:px-20 md:justify-between  z-20 items-center ">
@@ -71,23 +79,44 @@ const Header = () => {
             </NavLink>
           </li>
         </ul>
-        <Link to={"/login"}>
+          {
+           console.log('my user',user) 
+          }
+        {user ? (
           <button
+            onClick={handleLogOut}
             className="hidden md:block text-white bg-gradient-to-r from-indigo-500 to-indigo-500 
                 rounded-md hover:bg-gradient-to-r hover:from-orange-400 hover:to-orange-400  font-bold md:text-lg py-2 px-4 rounded-md "
           >
-            login
+            logout
             <FaSignInAlt className="inline ml-1 font-bold" />
           </button>
-        </Link>
-
-        <div className="flex right-5 absolute md:hidden ">
+        ) : (
           <Link to={"/login"}>
-            <button className="  bg-gradient-to-r from-indigo-500 to-indigo-500 rounded-md hover:bg-gradient-to-r hover:from-orange-400 hover:to-orange-400   ml-auto relative md:w-100 w-20 bottom-12 font-medium text-sm md:md:text-lg  text-white   p-1 ">
+            <button
+              className="hidden md:block text-white bg-gradient-to-r from-indigo-500 to-indigo-500 
+                rounded-md hover:bg-gradient-to-r hover:from-orange-400 hover:to-orange-400  font-bold md:text-lg py-2 px-4 rounded-md "
+            >
               login
               <FaSignInAlt className="inline ml-1 font-bold" />
             </button>
           </Link>
+        )}
+
+        <div className="flex right-5 absolute md:hidden ">
+          {user ? (
+            <button className="  bg-gradient-to-r from-indigo-500 to-indigo-500 rounded-md hover:bg-gradient-to-r hover:from-orange-400 hover:to-orange-400   ml-auto relative md:w-100 w-20 bottom-12 font-medium text-sm md:md:text-lg  text-white   p-1 ">
+              logout
+              <FaSignInAlt className="inline ml-1 font-bold" />
+            </button>
+          ) : (
+            <Link to={"/login"}>
+              <button className="  bg-gradient-to-r from-indigo-500 to-indigo-500 rounded-md hover:bg-gradient-to-r hover:from-orange-400 hover:to-orange-400   ml-auto relative md:w-100 w-20 bottom-12 font-medium text-sm md:md:text-lg  text-white   p-1 ">
+                login
+                <FaSignInAlt className="inline ml-1 font-bold" />
+              </button>
+            </Link>
+          )}
         </div>
       </nav>
     </>

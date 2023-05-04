@@ -20,10 +20,10 @@ const LatestRecipe = () => {
           />
           <div className="px-6 grid justify-center py-4">
             <div className="font-bold text-xl mb-2">Chicken Burgers</div>
-            <div class="flex  items-center">
+            <div className="flex  items-center">
               <svg
                 aria-hidden="true"
-                class="w-5 h-5 text-yellow-400"
+                className="w-5 h-5 text-yellow-400"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +33,7 @@ const LatestRecipe = () => {
               </svg>
               <svg
                 aria-hidden="true"
-                class="w-5 h-5 text-yellow-400"
+                className="w-5 h-5 text-yellow-400"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +43,7 @@ const LatestRecipe = () => {
               </svg>
               <svg
                 aria-hidden="true"
-                class="w-5 h-5 text-yellow-400"
+                className="w-5 h-5 text-yellow-400"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +53,7 @@ const LatestRecipe = () => {
               </svg>
               <svg
                 aria-hidden="true"
-                class="w-5 h-5 text-yellow-400"
+                className="w-5 h-5 text-yellow-400"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +63,7 @@ const LatestRecipe = () => {
               </svg>
               <svg
                 aria-hidden="true"
-                class="w-5 h-5 text-yellow-400"
+                className="w-5 h-5 text-yellow-400"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +78,7 @@ const LatestRecipe = () => {
             </p>
             <div className="d-flex">
               <img
-                class="rounded-full m-2 inline h-10 w-10"
+                className="rounded-full m-2 inline h-10 w-10"
                 src="https://images.mid-day.com/images/images/2015/apr/Chef-Sanjeev-Kapoor-l.jpg"
                 alt="Profile Image"
               />
@@ -99,10 +99,10 @@ const LatestRecipe = () => {
           />
           <div className="px-6 grid justify-center py-4">
             <div className="font-bold text-xl mb-2">Grilled Chicken Breast</div>
-            <div class="flex  items-center">
+            <div className="flex  items-center">
               <svg
                 aria-hidden="true"
-                class="w-5 h-5 text-yellow-400"
+                className="w-5 h-5 text-yellow-400"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -112,7 +112,7 @@ const LatestRecipe = () => {
               </svg>
               <svg
                 aria-hidden="true"
-                class="w-5 h-5 text-yellow-400"
+                className="w-5 h-5 text-yellow-400"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -122,7 +122,7 @@ const LatestRecipe = () => {
               </svg>
               <svg
                 aria-hidden="true"
-                class="w-5 h-5 text-yellow-400"
+                className="w-5 h-5 text-yellow-400"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -132,7 +132,7 @@ const LatestRecipe = () => {
               </svg>
               <svg
                 aria-hidden="true"
-                class="w-5 h-5 text-yellow-400"
+                className="w-5 h-5 text-yellow-400"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -142,7 +142,7 @@ const LatestRecipe = () => {
               </svg>
               <svg
                 aria-hidden="true"
-                class="w-5 h-5 text-yellow-400"
+                className="w-5 h-5 text-yellow-400"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -157,7 +157,7 @@ const LatestRecipe = () => {
             </p>
             <div className="d-flex">
               <img
-                class="rounded-full m-2 inline h-10 w-10"
+                className="rounded-full m-2 inline h-10 w-10"
                 src="https://www.dissdash.com/wp-content/uploads/2017/11/23507249_177003129545460_8800824551454801920_n.jpg"
                 alt="Profile Image"
               />
@@ -177,10 +177,10 @@ const LatestRecipe = () => {
 
           <div className="px-6 grid justify-center py-4">
             <div className="font-bold text-xl mb-2">Easy Chicken Teriyaki</div>
-            <div class="flex  items-center">
+            <div className="flex  items-center">
               <svg
                 aria-hidden="true"
-                class="w-5 h-5 text-yellow-400"
+                className="w-5 h-5 text-yellow-400"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -190,7 +190,7 @@ const LatestRecipe = () => {
               </svg>
               <svg
                 aria-hidden="true"
-                class="w-5 h-5 text-yellow-400"
+                className="w-5 h-5 text-yellow-400"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -200,7 +200,7 @@ const LatestRecipe = () => {
               </svg>
               <svg
                 aria-hidden="true"
-                class="w-5 h-5 text-yellow-400"
+                className="w-5 h-5 text-yellow-400"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -210,7 +210,7 @@ const LatestRecipe = () => {
               </svg>
               <svg
                 aria-hidden="true"
-                class="w-5 h-5 text-yellow-400"
+                className="w-5 h-5 text-yellow-400"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -220,7 +220,7 @@ const LatestRecipe = () => {
               </svg>
               <svg
                 aria-hidden="true"
-                class="w-5 h-5 text-gray-300 dark:text-gray-500"
+                className="w-5 h-5 text-gray-300 dark:text-gray-500"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -235,7 +235,7 @@ const LatestRecipe = () => {
             </p>
             <div className="d-flex">
               <img
-                class="rounded-full m-2 inline h-10 w-10"
+                className="rounded-full m-2 inline h-10 w-10"
                 src="https://indianfoodfreak.com/wp-content/uploads/2013/03/Saransh-Goila-2-1.jpg"
                 alt="Profile Image"
               />
@@ -249,7 +249,7 @@ const LatestRecipe = () => {
           <div className="px-6 pt-4 pb-2 d-flex  text-center  space-x-5"></div>
         </div>
         <p></p>
-        <button class="bg-blue-500 mx-auto  hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        <button className="bg-blue-500 mx-auto  hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
           Viwe all
         </button>
       </div>
