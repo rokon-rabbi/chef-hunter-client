@@ -7,7 +7,7 @@ import { getAuth, updateProfile } from "firebase/auth";
 const Registerpage = () => {
 const auth = getAuth();
   const [error, setError] = useState("");
-  const { createUser,logout,user } = useContext(AuthContext);
+  const { createUser,updateUser } = useContext(AuthContext);
   const handleRegister = event => {
     event.preventDefault();
     const form = event.target;
@@ -31,7 +31,7 @@ const auth = getAuth();
         const createdUser = result.user;
         // logout()
         // navigate('/login', { replace: true });
-        updateProfile(user, {
+        updateUser( {
           displayName: {name}, photoURL: {photo}
         }).then(() => {
           // Profile updated!

@@ -17,8 +17,10 @@ const Header = () => {
   const [icon, setIcon] = useState(true);
   const { user, logOut } = useContext(AuthContext);
   if (user !== null) {
+    console.log("user")
     console.log(user)
-    };
+  };
+  console.log(user)
   
   const handleLogOut = () => {
     logOut()

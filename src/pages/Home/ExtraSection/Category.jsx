@@ -2,7 +2,7 @@ import React from 'react';
 
 const Category = () => {
     return (
-        <div className="max-w-7xl mx-auto py-12 sm:px-6 lg:px-8 bg-slate-50 shadow-lg">
+        <div className="max-w-7xl mx-auto py-12 sm:px-6 md:px-8 px-10 bg-slate-50 shadow-lg">
         <h2 className="md:text-6xl text-3xl font-extrabold text-gray-900 text-center mt-4 md:mt-12">Categories</h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 p-20">
           
@@ -19,7 +19,7 @@ const Category = () => {
                
               
             </div>
-            <h3 className='text-3xl p-2 text-zinc-900 font-bold'>Beef</h3>
+            <h3 className='md:text-3xl p-2 text-zinc-900 font-bold'>Beef</h3>
            </div>
            <div className="grid text-center">
            <div
@@ -34,7 +34,7 @@ const Category = () => {
                
               
             </div>
-            <h3 className='text-3xl p-2 text-zinc-900 font-bold'>Chicken</h3>
+            <h3 className='md:text-3xl p-2 text-zinc-900 font-bold'>Chicken</h3>
            </div>
            <div className="grid text-center">
            <div
@@ -49,7 +49,7 @@ const Category = () => {
              
               
             </div>
-            <h3 className='text-3xl p-2 text-zinc-900 font-bold'>Vegetarian</h3>
+            <h3 className='md:text-3xl p-2 text-zinc-900 font-bold'>Vegetarian</h3>
            </div>
            <div className="grid text-center">
            <div
@@ -64,7 +64,7 @@ const Category = () => {
                
               
             </div>
-            <h3 className='text-3xl p-2 text-zinc-900 font-bold'>Desserts</h3>
+            <h3 className='md:text-3xl p-2 text-zinc-900 font-bold'>Desserts</h3>
            </div>
         </div>
       </div>

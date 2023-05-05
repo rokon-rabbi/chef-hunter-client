@@ -11,15 +11,12 @@ const Loginpage = () => {
   const location = useLocation();
   console.log("login page location", location);
   const from = location.state?.from?.pathname || "/";
-
-  const { signIn } = useContext(AuthContext);
+  const { signIn,signInWithGoogle,signInWithGithub } = useContext(AuthContext);
   const [user, setUser] = useState({});
   const [error, setError] = useState("");
-  const googleProvider = new GoogleAuthProvider();
-  const provider = new GithubAuthProvider();
-  const auth = getAuth(app);
+ 
   const handleGthub = () => {
-    signInWithPopup(auth, provider)
+    signInWithGithub()
       .then(result => {
         // This gives you a GitHub Access Token. You can use it to access the GitHub API.
         const credential = GithubAuthProvider.credentialFromResult(result);
@@ -27,6 +24,7 @@ const Loginpage = () => {
 
         // The signed-in user info.
         const user = result.user;
+        navigate(from, { replace: true });
         // IdP data available using getAdditionalUserInfo(result)
         // ...
       })
@@ -42,10 +40,11 @@ const Loginpage = () => {
       });
   };
   const handleGoogle = () => {
-    signInWithPopup(auth, googleProvider)
+    signInWithGoogle()
       .then(result => {
         const user = result.user;
         setUser(user);
+        navigate(from, { replace: true });
         console.log(user);
       })
       .catch(error => {

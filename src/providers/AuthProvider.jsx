@@ -1,11 +1,12 @@
 import React, { createContext } from 'react';
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
 import { useEffect } from 'react';
 import { useState } from 'react';
 import app from '../firebase/firebase.config';
-
+import {  signInWithPopup, GithubAuthProvider } from "firebase/auth";
 export const AuthContext = createContext(null);
-
+const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
 const auth = getAuth(app);
 
 const AuthProvider = ({children}) => {
@@ -16,18 +17,22 @@ const AuthProvider = ({children}) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
     }
-    // const signInWithGoogle = () => {
-    //     setLoading(true);
-    //     return signInWithPopup(auth, GoogleAuthProvider)
-    // }
+    const signInWithGoogle = () => {
+        setLoading(true);
+        return signInWithPopup(auth, googleProvider)
+    }
+    const signInWithGithub = () => {
+        setLoading(true);
+        return signInWithPopup(auth, githubProvider)
+    }
     const signIn = (email, password) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
-    // const updateUser = (user, name,photo) => {
-    //     setLoading(true);
-    //     return updateProfile(user, name, photo);
-    // }
+    const updateUser = ( profile) => {
+        setLoading(true);
+        return updateProfile(user, profile);
+    }
     
     const logOut = () => {
         setLoading(true);
@@ -54,8 +59,9 @@ const AuthProvider = ({children}) => {
         createUser,
         signIn,
         logOut,
-        // signInWithGoogle
-        // updateUser
+        signInWithGoogle,
+        signInWithGithub,
+        updateUser
     }
 
     return (
