@@ -34,20 +34,20 @@ const ChefRecipes = props => {
       <motion.img
         src={image}
         alt={chefName}
-        className="rounded-full w-64 h-64 md:w-80 md:h-80 mr-8"
+        className="rounded-full w-48 mr-3 h-48 md:w-80 md:h-80 md:mr-8"
         variants={imageVariants}
       />
       <div className="text-white">
-        <motion.h1 className="text-3xl font-bold mb-2" variants={textVariants}>
+        <motion.h1 className="md:text-3xl font-bold mb-2" variants={textVariants}>
           {chefName}
         </motion.h1>
-        <motion.p className="text-xl mb-4" variants={textVariants}>
+        <motion.p className="md:text-xl text-xs  text-justify mb-4" variants={textVariants}>
           {bio}
         </motion.p>
         <motion.div className="flex items-center mb-4" variants={likesVariants}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 mr-2"
+            className="md:h-6 h-4 w-4 md:w-6 mr-2"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -59,8 +59,8 @@ const ChefRecipes = props => {
               d="M5 13l4 4L19 7"
             />
           </svg>
-          <p className="text-lg mr-2">Likes:</p>
-          <p className="text-lg font-bold">{likes}</p>
+          <p className="md:text-lg text-sm mr-2">Likes:</p>
+          <p className="md:text-lg text-xs font-bold">{likes}</p>
         </motion.div>
         <motion.div className="flex items-center" variants={recipesVariants}>
           <svg
@@ -77,8 +77,8 @@ const ChefRecipes = props => {
               d="M5 13l4 4L19 7"
             />
           </svg>
-          <p className="text-lg mr-2">Number of Recipes:</p>
-          <p className="text-lg font-bold">{numRecipes}</p>
+          <p className="md:text-lg text-xs mr-2">Number of Recipes:</p>
+          <p className="md:text-lg text-xs font-bold">{numRecipes}</p>
         </motion.div>
         <motion.div className="flex items-center" variants={experienceVariants}>
           <svg
@@ -95,8 +95,8 @@ const ChefRecipes = props => {
               d="M5 13l4 4L19 7"
             />
           </svg>
-          <p className="text-lg mr-2">Years of experience:</p>
-          <p className="text-lg font-bold">{yearsOfExperience}</p>
+          <p className="md:text-lg text-xs mr-2">Years of experience:</p>
+          <p className="md:text-lg text-xs font-bold">{yearsOfExperience}</p>
         </motion.div>
       </div>
     </motion.div>

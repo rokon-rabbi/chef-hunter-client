@@ -27,7 +27,7 @@ const ChefDetails = () => {
   return (
     <div>
       {/* banner  */}
-      <div className="px-20 ">
+      <div className="px-4 md:px-20 ">
         <ChefRecipes chefInfo={chefInfo}></ChefRecipes>
       </div>
       {/* recipes  */}
@@ -35,25 +35,25 @@ const ChefDetails = () => {
       <div className="md:text-6xl text-3xl font-extrabold text-gray-900 text-center mt-14 md:mt-18">
         chef recipes
       </div>
-      <div className="bg-white rounded-lg shadow  overflow-x-auto px-20 py-10">
+      <div className="bg-white rounded-lg shadow  overflow-x-auto md:px-20 py-6 px-2 md:py-10">
         <table className="w-full table-auto shadow-2xl">
           <thead>
-            <tr className="text-xs font-semibold text-gray-500 border uppercase tracking-wide">
-              <th className="py-3 px-4 text-left">Recipe</th>
-              <th className="py-3 px-4 text-left">Ingredients</th>
-              <th className="py-3 px-4 text-left">Cooking Method</th>
-              <th className="py-3 px-4 text-left">Rating</th>
-              <th className="py-3 px-4 text-left">Favorite</th>
+            <tr className="text-xs  md:font-semibold font-thin text-gray-500 border md:uppercase md:tracking-wide">
+              <th className="md:py-3 md:px-4 md:text-left text-center" >Recipe</th>
+              <th className="md:py-3 md:px-4 md:text-left text-center" >Ingredients</th>
+              <th className="md:py-3 md:px-4 md:text-left text-center" >Cooking Method</th>
+              <th className="md:py-3 md:px-4 md:text-left text-center" >Rating</th>
+              <th className="md:py-3 md:px-4 md:text-left text-center" >Favorite</th>
             </tr>
           </thead>
-          <tbody className=" text-sm  font-normal text-gray-500">
+          <tbody className=" md:text-sm text-xs md:font-normal text-gray-500">
             {chefInfo.recipes.map((recipe, idx) => (
               <tr key={idx}>
-                <td className="py-3 border px-4">{recipe.name}</td>
-                <td className="py-3 border px-18">
+                <td className="md:py-3 text-center px-1 border md:px-4">{recipe.name}</td>
+                <td className="md:py-3 border md:px-18">
                   <ul>
                     {recipe.ingredients.map(ingredient => (
-                      <div className="">
+                      <div className="md:px-2 px-1">
                         <CiCircleChevRight className="inline"></CiCircleChevRight>{" "}
                         <li className="inline" key={ingredient}>
                           {ingredient}
@@ -62,19 +62,19 @@ const ChefDetails = () => {
                     ))}
                   </ul>
                 </td>
-                <td className="py-3 border px-4">{recipe.method}</td>
-                <td className="py-3 border px-4">{recipe.rating}</td>
-                <td className="py-3 border px-4">
+                <td className="md:py-3 px-2 py-2 border md:px-4">{recipe.method}</td>
+                <td className="md:py-3 border md:px-4">{recipe.rating}</td>
+                <td className="md:py-3 border md:px-4">
                   <button
                     onClick={() => handleFavorite(recipe.id)}
-                    className={`flex rounded border p-2  hover:bg-red-500 hover:text-white  items-center text-red-600 focus:outline-none  ${
+                    className={`flex rounded border md:p-2 p-1  hover:bg-red-500 hover:text-white  items-center text-red-600 focus:outline-none  ${
                       disabledButtons.includes(recipe.id)
                         ? "disabled:opacity-25 cursor-not-allowed"
                         : ""
                     }`}
                     disabled={disabledButtons.includes(recipe.id)}
                   >
-                    <FaHeart className="w-5 h-5 mr-1" />
+                    <FaHeart className="md:w-5  md:h-5 mr-1" />
                     <span>Favorite</span>
                   </button>
                 </td>

@@ -2,9 +2,9 @@ import React from 'react';
 
 const Category = () => {
     return (
-        <div className="max-w-7xl mx-auto py-12 sm:px-6 md:px-8 px-10 bg-slate-50 shadow-lg">
+        <div className="max-w-7xl mx-auto py-12 sm:px-6 md:px-8 px-4 bg-slate-50 shadow-lg">
         <h2 className="md:text-6xl text-3xl font-extrabold text-gray-900 text-center mt-4 md:mt-12">Categories</h2>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 p-20">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pt-10 md:pt-20 px-20">
           
            <div className="grid text-center ">
            <div

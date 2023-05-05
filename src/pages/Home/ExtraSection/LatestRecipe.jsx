@@ -11,7 +11,7 @@ const LatestRecipe = () => {
         }}
       ></div>
 
-      <div className="relative  md:p-36 p-14 grid md:grid-cols-3  grid-cols-1 gap-10 ">
+      <div className="relative  md:p-24 p-14 grid md:grid-cols-3  grid-cols-1 gap-10 ">
         <div className=" bg-white  h-75  rounded overflow-hidden shadow-xl ">
           <img
             className=" rounded-3xl shadow-sm p-5  md:h-80 h-64 w-full"
