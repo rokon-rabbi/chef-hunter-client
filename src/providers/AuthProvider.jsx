@@ -13,9 +13,13 @@ const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     
-    const createUser = (email, password) => {
+    async function createUser (name,photo,email, password) {
         setLoading(true);
-        return createUserWithEmailAndPassword(auth, email, password);
+        await createUserWithEmailAndPassword(auth, email, password);
+        await updateProfile(auth.currentUser, {
+            displayName: name,
+            photoURL:photo
+          });
     }
     const signInWithGoogle = () => {
         setLoading(true);

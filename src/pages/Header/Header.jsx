@@ -11,17 +11,16 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { getAuth } from "firebase/auth";
 
 const Header = () => {
-
   const auth = getAuth();
   // const currentuser = auth.currentUser;
   const [icon, setIcon] = useState(true);
   const { user, logOut } = useContext(AuthContext);
   if (user !== null) {
-    console.log("user")
-    console.log(user)
-  };
-  console.log(user)
-  
+    console.log("user");
+    console.log(user);
+  }
+  console.log(user);
+
   const handleLogOut = () => {
     logOut()
       .then()
@@ -88,17 +87,30 @@ const Header = () => {
             </NavLink>
           </li>
         </ul>
-          
+
         {/* <p>{user.displayName}</p> */}
         {user ? (
-          <button
-            onClick={handleLogOut}
-            className="hidden md:block text-white bg-gradient-to-r from-indigo-500 to-indigo-500 
+          <div className="flex items-center  gap-5">
+            <div className="hidden md:block">
+              <div className="  hover:cursor-pointer rounded-full overflow-hidden">
+                <img
+                  className="md:w-14 md:h-14"
+                  src={user.photoURL}
+                  alt="Profile"
+                  title={user.displayName}
+                />
+              </div>
+            </div>
+            {/* button  */}
+            <button
+              onClick={handleLogOut}
+              className="hidden md:block text-white bg-gradient-to-r from-indigo-500 to-indigo-500 
                 rounded-md hover:bg-gradient-to-r hover:from-orange-400 hover:to-orange-400  font-bold md:text-lg py-2 px-4 rounded-md "
-          >
-            logout
-            <FaSignInAlt className="inline ml-1 font-bold" />
-          </button>
+            >
+              logout
+              <FaSignInAlt className="inline ml-1 font-bold" />
+            </button>
+          </div>
         ) : (
           <Link to={"/login"}>
             <button
@@ -111,15 +123,30 @@ const Header = () => {
           </Link>
         )}
 
-        <div className="flex right-5 absolute md:hidden ">
+        <div className="flex right-5 relative md:hidden ">
           {user ? (
-            <button className="  bg-gradient-to-r from-indigo-500 to-indigo-500 rounded-md hover:bg-gradient-to-r hover:from-orange-400 hover:to-orange-400   ml-auto relative md:w-100 w-20 bottom-12 font-medium text-sm md:md:text-lg  text-white   p-1 ">
-              logout
-              <FaSignInAlt className="inline ml-1 font-bold" />
-            </button>
+            <div className="flex items-center gap-5">
+              <div className="">
+                <div className=" left-72 bottom-11  absolute hover:cursor-pointer rounded-full overflow-hidden ">
+                  <img
+                    className=" h-8 w-8"
+                    src={user.photoURL}
+                    alt="Profile"
+                    title={user.displayName}
+                  />
+                </div>
+                <button
+                  onClick={handleLogOut}
+                  className=" left-80 ml-1 bg-gradient-to-r from-indigo-500 to-indigo-500 rounded-md hover:bg-gradient-to-r hover:from-orange-400 hover:to-orange-400   relative md:w-100 w-auto bottom-12 font-medium text-xs md:text-lg  text-white p-1 "
+                >
+                  logout
+                  <FaSignInAlt className="inline ml-1 font-bold" />
+                </button>
+              </div>
+            </div>
           ) : (
             <Link to={"/login"}>
-              <button className="  bg-gradient-to-r from-indigo-500 to-indigo-500 rounded-md hover:bg-gradient-to-r hover:from-orange-400 hover:to-orange-400   ml-auto relative md:w-100 w-20 bottom-12 font-medium text-sm md:md:text-lg  text-white   p-1 ">
+              <button className=" left-72 bg-gradient-to-r from-indigo-500 to-indigo-500 rounded-md hover:bg-gradient-to-r hover:from-orange-400 hover:to-orange-400   ml-auto relative md:w-100 w-20 bottom-12 font-medium text-sm md:md:text-lg  text-white   p-1 ">
                 login
                 <FaSignInAlt className="inline ml-1 font-bold" />
               </button>

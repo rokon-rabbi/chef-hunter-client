@@ -26,24 +26,8 @@ const auth = getAuth();
       return;
     }
   
-    createUser(email, password)
-      .then(result => {
-        const createdUser = result.user;
-        // logout()
-        // navigate('/login', { replace: true });
-        updateUser( {
-          displayName: {name}, photoURL: {photo}
-        }).then(() => {
-          // Profile updated!
-          // ...
-        }).catch((error) => {
-          // An error occurred
-          // ...
-        });
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    createUser(name,photo,email, password)
+     
   };
   return (
     <div className="bg-cyan-500 flex flex-col items-center justify-center   h-screen">
