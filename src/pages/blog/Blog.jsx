@@ -3,7 +3,7 @@ const Blog = () => {
   
   return (
    
-        <div className="container text-gray-800 font-semibold leading-7 text-lg mx-auto">
+        <div className="container text-gray-800 font-semibold leading-7 pt-16 text-lg mx-auto">
         <h2 className="text-2xl font-bold m-10 bg-amber-200 w-fit mx-auto rounded-md text-center">
             Questions and Answers
         </h2>

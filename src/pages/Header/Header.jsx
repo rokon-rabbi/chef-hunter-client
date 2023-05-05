@@ -52,8 +52,8 @@ const Header = () => {
           <img className="w-16 md:w-24 lg:w-32" src={Logo} alt="FoodHub logo" />
         </Link>
         <ul
-          className={` md:space-x-10 md:flex md:static md:text-lg  absolute   md:bg-none text-slate-950 duration-300 ${
-            !icon ? "left-10 p-2" : "-left-44 "
+          className={`bg-white shadow-2xl border  rounded-r-md px-6 py-4 md:space-x-10 md:flex md:static md:text-lg  absolute   md:bg-none text-slate-950 duration-300 ${
+            !icon ? "left-0 p-2" : "-left-40 "
           } `}
         >
           <li>
