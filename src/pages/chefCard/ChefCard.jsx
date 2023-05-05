@@ -24,7 +24,7 @@ const ChefCard = props => {
 
         <LazyLoadImage
           loading="lazy"
-          className=" rounded-3xl shadow-sm p-5  md:h-80 h-64 w-full"
+          className=" rounded-3xl shadow-sm p-5  md:h-80 h-64 w-screen"
           src={loaded ? image : ""}
           alt={chefName}
           effect="blur"
