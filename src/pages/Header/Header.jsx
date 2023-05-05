@@ -27,7 +27,7 @@ const Header = () => {
   };
   return (
     <>
-      <nav className="md:flex   p-2 md:px-20 md:justify-between  z-20 items-center ">
+      <nav className="md:flex  p-2 md:px-20 md:justify-between   items-center ">
         {icon ? (
           <FontAwesomeIcon
             className="text-3xl  md:hidden inline  relative top-11 justify-start "
@@ -48,10 +48,10 @@ const Header = () => {
           title="FoodHub"
           className="flex justify-center"
         >
-          <img className="w-16 md:w-24 lg:w-32" src={Logo} alt="FoodHub logo" />
+          <img className="w-20 md:w-24 lg:w-32" src={Logo} alt="FoodHub logo" />
         </Link>
         <ul
-          className={`bg-white shadow-2xl md:shadow-none md:border-none border  rounded-r-md px-6 py-4 md:space-x-10 md:flex md:static md:text-lg  absolute  md:bg-none text-slate-950 duration-300 ${
+          className={`bg-white shadow-2xl md:shadow-none md:border-none border z-10  rounded-r-md px-6 py-4 md:space-x-10 md:flex md:static md:text-lg  absolute  md:bg-none text-slate-950 duration-300 ${
             !icon ? "left-0 p-2" : "-left-40 "
           } `}
         >
