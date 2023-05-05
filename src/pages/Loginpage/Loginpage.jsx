@@ -72,9 +72,16 @@ const Loginpage = () => {
       });
   };
   return (
-    <div className=" bg-cyan-500 ">
-      <div className="flex flex-col  items-center justify-center h-screen ">
-        <div className="bg-white shadow-md rounded px-8 mb-24 pt-8">
+       <div className=" bg-state-50 relative">
+      <div
+        className="absolute inset-0  bg-cover bg-center"
+        style={{
+          backgroundImage: `url("https://png.pngtree.com/background/20220728/original/pngtree-fast-food-doodles-hand-drawn-colorful-vector-symbols-and-objects-picture-image_1846880.jpg")`,
+          opacity: "0.2",
+        }}
+      ></div>
+      <div className="flex relative flex-col p-6 items-center justify-center h-full ">
+        <div className="bg-white  rounded  px-8 mt-5 mb-5 shadow-2xl pt-8">
           <div className="mb-4">
             <p className="text-3xl font-bold text-center underline pb-8">
               Login

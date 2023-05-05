@@ -5,7 +5,6 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import Logo from "../../../src/assets/Logo.png";
 
-// import { FiLogIn } from 'react-icons/fa';
 import { FaSignInAlt } from "react-icons/fa";
 import { AuthContext } from "../../providers/AuthProvider";
 import { getAuth } from "firebase/auth";
@@ -52,7 +51,7 @@ const Header = () => {
           <img className="w-16 md:w-24 lg:w-32" src={Logo} alt="FoodHub logo" />
         </Link>
         <ul
-          className={`bg-white shadow-2xl border  rounded-r-md px-6 py-4 md:space-x-10 md:flex md:static md:text-lg  absolute   md:bg-none text-slate-950 duration-300 ${
+          className={`bg-white shadow-2xl md:shadow-none md:border-none border  rounded-r-md px-6 py-4 md:space-x-10 md:flex md:static md:text-lg  absolute  md:bg-none text-slate-950 duration-300 ${
             !icon ? "left-0 p-2" : "-left-40 "
           } `}
         >

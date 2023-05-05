@@ -30,8 +30,16 @@ const auth = getAuth();
      
   };
   return (
-    <div className="bg-cyan-500 flex flex-col items-center justify-center   h-screen">
-      <div className="bg-white shadow-md rounded px-8 pt-6 m-10 pb-8 md:w-96 mb-4">
+    <div className=" bg-slate-50 relative flex flex-col items-center justify-center   h-full">
+       
+      <div
+        className="absolute inset-0  bg-cover bg-center"
+        style={{
+          backgroundImage: `url("https://png.pngtree.com/background/20220728/original/pngtree-fast-food-doodles-hand-drawn-colorful-vector-symbols-and-objects-picture-image_1846880.jpg")`,
+          opacity: "0.2",
+        }}
+      ></div>
+      <div className="bg-white relative rounded  px-8 mt-5 mb-5 shadow-2xl pt-8 w-80 md:w-96">
         <p className="text-3xl font-bold text-center underline m-4">Register</p>
         <form onSubmit={handleRegister}>
           <div className="mb-4">
